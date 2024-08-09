@@ -3,8 +3,8 @@ pipeline {
     environment {
         // Environment variables from Jenkins job configuration
         CI = 'true'
-        ANGULAR_ENV = "development}" // For example: 'production' or 'development'
-        EC2_IP = "${EC2_IP}"
+        ANGULAR_ENV = "development" // For example: 'production' or 'development'
+        EC2_IP = "13.127.93.33"
         APP_DIR = "${APP_DIR}"
     }
     stages {
