@@ -10,7 +10,7 @@ pipeline {
             steps {
                 // Install Angular CLI locally
                 sh 'npm install @angular/cli'
-                sh './node_modules/.bin/ng build --prod'
+                sh 'ng build'
             }
         }
         stage('Test') {
