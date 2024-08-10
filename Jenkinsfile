@@ -8,13 +8,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
-                    // Install Node.js and Angular CLI if not already installed
-                    sh 'npm install -g @angular/cli'
-                }
-                sh 'npm install' // Install project dependencies
-                sh 'ng build --configuration=${ANGULAR_ENV}' // Build Angular app
-                archiveArtifacts artifacts: 'dist/**/*', allowEmptyArchive: true // Archive build artifacts
+                // Install Angular CLI locally
+                sh 'npm install @angular/cli'
+                sh './node_modules/.bin/ng build --prod'
             }
         }
         stage('Test') {
